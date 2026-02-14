@@ -1,0 +1,190 @@
+/* ── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Map ──────────────────────────────────────────────────── */
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Modal Overlay ────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px 28px;
+  width: 380px;
+  max-width: 90vw;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.modal h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #f0c6d4;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.modal input:focus {
+  border-color: #e8799a;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f7a8c4, #e8799a);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(232, 121, 154, 0.35);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(232, 121, 154, 0.5);
+}
+
+.btn-cancel {
+  background: #f3f3f3;
+  color: #666;
+}
+
+.btn-cancel:hover {
+  background: #e8e8e8;
+}
+
+/* ── Pulsing loading marker ───────────────────────────────── */
+.pulse-marker {
+  width: 22px;
+  height: 22px;
+  background: #f7a8c4;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 0 rgba(247, 168, 196, 0.6);
+  animation: pulse-ring 1.4s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(247, 168, 196, 0.6); }
+  70%  { box-shadow: 0 0 0 18px rgba(247, 168, 196, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(247, 168, 196, 0); }
+}
+
+/* ── Persona glow marker ─────────────────────────────────── */
+.glow-marker {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #f7a8c4 40%, #e8799a 100%);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 12px 4px rgba(247, 168, 196, 0.5);
+  transition: transform 0.2s;
+}
+
+.glow-marker:hover {
+  transform: scale(1.25);
+}
+
+/* ── Popup styling ────────────────────────────────────────── */
+.leaflet-popup-content-wrapper {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  min-width: 220px;
+}
+
+.persona-popup {
+  padding: 14px 16px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.persona-popup .persona-text {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.persona-popup video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ── Loading tooltip ──────────────────────────────────────── */
+.loading-tooltip {
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #e8799a;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border: none;
+  white-space: nowrap;
+}
+
+.loading-tooltip::before {
+  border-top-color: #fff !important;
+}

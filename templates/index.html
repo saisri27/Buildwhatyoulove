@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Living Map of San Francisco</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- Full-screen Leaflet map container -->
+  <div id="map"></div>
+
+  <!-- Modal overlay for persona input -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h2>Who are you in this city?</h2>
+      <input
+        type="text"
+        id="persona-input"
+        placeholder="e.g. A street musician playing jazz at sunset…"
+        autocomplete="off"
+      />
+      <div class="modal-buttons">
+        <button id="btn-submit" class="btn btn-primary">Submit</button>
+        <button id="btn-cancel" class="btn btn-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- App script -->
+  <script src="/static/script.js"></script>
+</body>
+</html>
